@@ -1,0 +1,22 @@
+'''
+O programa recebe uma lista de nomes e devolve, baseado na ordem léxica, o primeiro em ordem alfabética
+'''
+
+def ordem_alf(lista_nomes):
+    lista_lower = [x.lower() for x in (lista_nomes)] # Converte os caracteres para minúsculas
+    z = len(lista_nomes) # Parâmetro para o funcionamento no laço baseada no comprimento da lista
+    while z != 1:
+        a = lista_lower[0]
+        b = lista_lower[1]
+        z -= 1
+        c = ord(a[0]) # Usa a ordem léxica para achar a ordem alfabética
+        d = ord(b[0])
+        while c == d: # Percorre as letras seguintes de dois nomes até que sejam diferentes
+           c = ord(a[0 + 1])
+           d = ord(b[0 + 1])
+        if c > d: # Remove o primeiro ou o segundo nome da lista 
+            del(lista_lower[0])
+        else:
+            del(lista_lower[1])
+    nome = lista_lower.pop(0) # Cria uma str para que seja possível usar o capitalize 
+    print(nome.capitalize())
