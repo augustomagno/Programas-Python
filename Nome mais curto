@@ -1,0 +1,14 @@
+'''
+Programa que recebe uma lista de nomes e devole o nome mais curto da lista
+'''
+def mais_curto(lista_nomes):
+    z = len(lista_nomes) # Comprimento da lista se torna parâmetro para o laço com while
+    while z != 1:
+        a = lista_nomes[0] # Cria uma variável que recebe o primeiro nome da lista
+        b = lista_nomes[1] # Cria uma variável que recebe o segundo nome da lista
+        z -= 1
+        if len(a) > len(b): # Remove o primeiro ou o segundo nome da lista
+            del(lista_nomes[0]) 
+        else:
+            del(lista_nomes[1])
+    print(lista_nomes[0])
